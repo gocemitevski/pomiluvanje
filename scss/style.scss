@@ -1,0 +1,18 @@
+@charset "utf-8";
+
+@import "custom-variables"; // Must be before the Bootstrap stylesheets
+@import "../bootstrap-sass-3.3.6/assets/stylesheets/bootstrap";
+
+.container{
+    margin-top: $jumbotron-padding * 2;
+    margin-bottom: $jumbotron-padding * 2;
+}
+
+.main-title{
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.download-buttons{
+    margin-top: $jumbotron-padding;
+}

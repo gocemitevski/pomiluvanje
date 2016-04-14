@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#">
+    <head>
+        <title>Помилувања на 12-ти април 2016 година во Република Македонија</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Обработени податоци од Службен весник на Република Македонија за помилувањата на 12-ти април 2016 г. од страна на Ѓорѓе Иванов">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="well well-lg text-center">
+                <header class="main-title">
+                    <h1>Помилувања на 12-ти април 2016 година во Република Македонија</h1>
+                    <p class="lead">Обработени податоци од Службен весник на Република Македонија за помилувањата на 12-ти април 2016 г. од страна на Ѓорѓе Иванов</p>
+                    <p>Извор на податоци: <a href="pdf/SLU@BEN VESNIK NA RM br. 72 od 12.04.2016.pdf" class="izvor"></a></p>
+                </header>
+                <nav class="text-center download-buttons">
+                    <ul class="list-inline">
+                        <li><a href="pdf/SLU@BEN VESNIK NA RM br. 72 od 12.04.2016 173-183.pdf" class="btn btn-lg btn-success">PDF</a></li>
+                        <li><a href="json/pomiluvanja.json" class="btn btn-lg btn-warning">JSON</a></li>
+                    </ul>                
+                </nav>
+            </div>
+            <main class="row">
+                <div class="col-md-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Вкупен број на одлуки за помилување</div>
+                        <div class="panel-body vkupno-odluki">...</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Вкупен број на помилувани лица</div>
+                        <div class="panel-body vkupno-pomiluvani">...</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Лице со најмногу одлуки за помилување</div>
+                        <div class="panel-body najpomiluvano-lice">...</div>
+                    </div>
+                </div>
+            </main>
+            <table class="table table-responsive">
+                <thead>
+                    <tr>
+                        <th>Име и презиме</th>
+                        <th>Град</th>
+                        <th>Број на одлуки за помилување</th>
+                        <th>Броеви на одлуките за помилување</th>
+                    </tr>
+                </thead>
+                <tbody class="pomuluvani"></tbody>
+            </table>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+        <script src="js/render.js"></script>
+        <script>
+
+            // Load Roboto from Google Fonts
+            WebFontConfig = {
+                google: {families: ['Roboto:400,400italic,700,700italic:latin,cyrillic']}
+            };
+            (function () {
+                var wf = document.createElement('script');
+                wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+                        '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+                wf.type = 'text/javascript';
+                wf.async = 'true';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(wf, s);
+            })();
+
+            // Don't load Twitter widget if screen size is lower than 768px
+            if (screen && screen.width > 767) {
+                !function (d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+                    if (!d.getElementById(id)) {
+                        js = d.createElement(s);
+                        js.id = id;
+                        js.src = p + "://platform.twitter.com/widgets.js";
+                        fjs.parentNode.insertBefore(js, fjs);
+                    }
+                }(document, "script", "twitter-wjs");
+            }
+        </script>
+    </body>
+</html>
