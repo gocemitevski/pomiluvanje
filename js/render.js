@@ -22,6 +22,11 @@ var najpomiluvano_lice = '';
 var broevi_na_odluki_html = '';
 var max_odluki = 0;
 
+// Сортирај ја табелата според бројот на одлуки по лица
+pomiluvani.sort(function (a, b) {
+    return +b.odluki.length - +a.odluki.length;
+});
+
 $(pomiluvani).each(function () {
     site_odluki = site_odluki.concat(this.odluki);
     site_pomiluvani = site_pomiluvani.concat(this.ime_prezime);
