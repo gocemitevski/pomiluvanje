@@ -32,5 +32,16 @@
 }
 
 .broj-odluka{
+
+    &:not(:first-child),
+    &:not(:last-child){
+        margin-top: $padding-small-vertical;
+        padding-bottom: $padding-small-vertical;
+        border-bottom: $padding-xs-vertical solid $table-border-color;
+    }
+    
+    &:last-child{
+        border-bottom: none;
+    }
     display: block;
 }
