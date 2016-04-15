@@ -4,8 +4,14 @@
 @import "../bootstrap-sass-3.3.6/assets/stylesheets/bootstrap";
 
 .container{
-    margin-top: $jumbotron-padding * 2;
-    margin-bottom: $jumbotron-padding * 2;
+    @media (max-width: $screen-sm-max){
+        margin-top: $jumbotron-padding/2;
+        margin-bottom: $jumbotron-padding/2;
+    }
+    @media (min-width: $screen-md-min){
+        margin-top: $jumbotron-padding * 2;
+        margin-bottom: $jumbotron-padding * 2;
+    }
 }
 
 .main-title{
@@ -15,4 +21,12 @@
 
 .download-buttons{
     margin-top: $jumbotron-padding;
+
+    @media (max-width: $screen-xs-max){
+        li,
+        .btn{
+            display: block;
+            margin-bottom: $jumbotron-padding/2;
+        }
+    }
 }
