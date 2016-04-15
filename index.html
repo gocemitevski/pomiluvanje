@@ -20,40 +20,43 @@
                     <ul class="list-inline">
                         <li><a href="pdf/SLU@BEN VESNIK NA RM br. 72 od 12.04.2016 173-183.pdf" class="btn btn-lg btn-success">PDF</a></li>
                         <li><a href="json/pomiluvanja.json" class="btn btn-lg btn-warning">JSON</a></li>
+                        <li><a class="btn btn-lg btn-primary" href="https://github.com/gocemitevski/pomiluvanje">Изворен код</a></li>
                     </ul>                
                 </nav>
             </div>
-            <main class="row">
-                <div class="col-md-4">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">Вкупен број на одлуки за помилување</div>
-                        <div class="panel-body vkupno-odluki">...</div>
+            <main>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Вкупен број на одлуки за помилување</div>
+                            <div class="panel-body vkupno-odluki">...</div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Вкупен број на помилувани лица</div>
+                            <div class="panel-body vkupno-pomiluvani">...</div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Лице со најмногу одлуки за помилување</div>
+                            <div class="panel-body najpomiluvano-lice">...</div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">Вкупен број на помилувани лица</div>
-                        <div class="panel-body vkupno-pomiluvani">...</div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">Лице со најмногу одлуки за помилување</div>
-                        <div class="panel-body najpomiluvano-lice">...</div>
-                    </div>
-                </div>
+                <table class="table table-responsive">
+                    <thead>
+                        <tr>
+                            <th>Име и презиме</th>
+                            <th>Град</th>
+                            <th>Број на одлуки за помилување</th>
+                            <th>Броеви на одлуките за помилување</th>
+                        </tr>
+                    </thead>
+                    <tbody class="row pomuluvani"></tbody>
+                </table>
             </main>
-            <table class="table table-responsive">
-                <thead>
-                    <tr>
-                        <th>Име и презиме</th>
-                        <th>Град</th>
-                        <th>Број на одлуки за помилување</th>
-                        <th>Броеви на одлуките за помилување</th>
-                    </tr>
-                </thead>
-                <tbody class="pomuluvani"></tbody>
-            </table>
         </div>
 
         <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
