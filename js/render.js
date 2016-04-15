@@ -19,7 +19,6 @@ var site_pomiluvani = [];
 var vkupno_odluki = 0;
 var izvor = json_data._izvor;
 var najpomiluvano_lice = '';
-var broevi_na_odluki_html = '';
 var max_odluki = 0;
 
 // Сортирај ја табелата според бројот на одлуки по лица
@@ -28,6 +27,8 @@ pomiluvani.sort(function (a, b) {
 });
 
 $(pomiluvani).each(function () {
+    var odluki_po_lice_html = '';
+    
     site_odluki = site_odluki.concat(this.odluki);
     site_pomiluvani = site_pomiluvani.concat(this.ime_prezime);
 
@@ -44,31 +45,18 @@ $(pomiluvani).each(function () {
         najpomiluvano_lice = this.ime_prezime;
     }
 
-    $('.pomuluvani').append("<tr><td class='col-md-4'>" + this.ime_prezime + "</td><td class='col-md-2'>" + this.grad + "</td><td class='col-md-2'>" + this.odluki.length + "</td>" + broevi_na_odluki_html + "<td class='col-md-4'>" + this.odluki + "</td></tr>");
+    // Обвиј го бројот на одлуката во <span>
+    this.odluki.forEach(function (el) {
+        odluki_po_lice_html = odluki_po_lice_html.concat('<span class="broj-odluka">' + el + '</span>');
+    });
+
+    $('.pomuluvani').append("<tr><td class='col-md-4'>" + this.ime_prezime + "</td><td class='col-md-2'>" + this.grad + "</td><td class='col-md-2'>" + this.odluki.length + "</td><td class='col-md-4'>" + odluki_po_lice_html + "</td></tr>");
 });
 
 $('.vkupno-odluki').html(vkupno_odluki);
 $('.vkupno-pomiluvani').html(vkupno_pomiluvani);
 $('.izvor').html(izvor);
 $('.najpomiluvano-lice').html(najpomiluvano_lice);
-
-http://stackoverflow.com/a/979325/3190066
-        function sort_by(field, reverse, primer) {
-
-            var key = primer ?
-                    function (x) {
-                        return primer(x[field]);
-                    } :
-                    function (x) {
-                        return x[field];
-                    };
-
-            reverse = !reverse ? 1 : -1;
-
-            return function (a, b) {
-                return a = key(a), b = key(b), reverse * ((a > b) - (b > a));
-            };
-        }
 
 // http://stackoverflow.com/a/9229821/3190066
 function uniq(a) {
