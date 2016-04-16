@@ -28,7 +28,7 @@ pomiluvani.sort(function (a, b) {
 
 $(pomiluvani).each(function () {
     var odluki_po_lice_html = '';
-    
+
     site_odluki = site_odluki.concat(this.odluki);
     site_pomiluvani = site_pomiluvani.concat(this.ime_prezime);
 
@@ -47,7 +47,7 @@ $(pomiluvani).each(function () {
 
     // Обвиј го бројот на одлуката во <span>
     this.odluki.forEach(function (el) {
-        odluki_po_lice_html = odluki_po_lice_html.concat('<span class="broj-odluka">' + el + '</span>');
+        odluki_po_lice_html = odluki_po_lice_html.concat('<div class="broj-odluka">' + el + '</div>');
     });
 
     $('.pomuluvani').append("<tr><td class='col-md-4'>" + this.ime_prezime + "</td><td class='col-md-2'>" + this.grad + "</td><td class='col-md-2'>" + this.odluki.length + "</td><td class='col-md-4'>" + odluki_po_lice_html + "</td></tr>");
